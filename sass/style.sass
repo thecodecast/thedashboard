@@ -1,0 +1,316 @@
+@import 'bourbon/bourbon'
+@import 'variables'
+@import 'layout/layout'
+@import 'theme/theme'
+@import 'tools/tools'
+@import 'modules/modules'
+
+a
+	text-decoration: none
+	display: block
+	outline: none !important
+
+ul
+	margin: 0
+	padding: 0
+	list-style: none
+
+.clearfix
+	&:after, &:before
+		clear: both
+		content: ''
+		display: table
+
+body
+	font-family: 'Raleway', sans-serif
+	font-weight: 100
+
+.btn
+	background-color: none
+	outline: none
+	border: none
+	padding: 0.75em
+	font-size: 12px
+	font-family: 'Raleway'
+	font-weight: 500
+	border-radius: 3px
+
+.btn-light
+	background-color: #ddd
+	color: #000
+
+.btn-dark
+	background-color: #333
+	color: #fff
+
+input[type="checkbox"]
+	
+
+.top-header
+	height: 70px
+	width: 100%
+	background-color: rgb(39,33,86)
+	position: fixed
+	top: 0
+	z-index: 2000
+	+display(flex)
+	.logo
+		flex: 0 0 38%
+	.top-nav
+		flex: 0 0 40%
+	.logged-in
+		flex: 0 0 22%
+
+
+.logo
+	margin-left: 20px
+	a
+		h2
+			color: #fff
+			font-size: 24px
+			font-weight: 100
+			span
+				font-weight: 700
+
+.top-nav
+	ul
+		li
+			margin: 20px 10px
+			display: inline-block
+			a
+				color: inherit
+				width: 30px
+				height: 30px
+				border-radius: 50%
+				background-color: #fff
+				line-height: 30px
+				text-align: center
+
+
+.logged-in
+	.logged-in-user
+		+transition(background-color 0.3s)
+		color: #fff
+		background-color: rgba(0,0,0,0.3)
+		height: 70px
+		line-height: 70px
+		text-align: center
+		cursor: pointer
+		&:hover
+			background-color: rgba(0,0,0,0.7)
+		.l-i-n-details
+			span
+				display: inline-block
+				vertical-align: top
+			.cs-dp-small
+				width: 30px
+				height: 30px
+				margin-right: 10px
+				background-color: #fff
+				border-radius: 50%
+				position: relative
+				top: 20px
+			.fa
+				top: 25px
+				margin-right: 10px
+				margin-left: 10px
+				position: relative
+				font-size: 20px
+		.the-dropdown
+			display: none
+			width: 100%
+			li
+				a
+					width: 100%
+					padding-left: 20px
+					text-align: left
+					color: #fff
+					background-color: rgb(39,33,86)
+					height: 70px
+					&:hover
+						background-color: rgba(39,33,86,0.9)
+
+#main-wrapper
+	position: relative
+	margin-top: 70px
+	&:after, &:before
+		display: table
+		content: ''
+		clear: both
+
+.side-nav
+	width: 15%
+	float: left
+	height: 100%
+	position: fixed
+	background-color: rgb(122,184,106)
+	ul
+		margin-top: 50px
+		li
+			margin: 10px 0
+			&:first-child
+				margin-top: 0
+			a
+				color: rgba(255,255,255,0.55)
+				font-weight: 300
+				font-size: 14px
+				padding: 18px 15px
+				+transition(all 0.3s)
+				i
+					margin: 0 8px
+				&.activated
+					color: rgba(255,255,255,1)
+					background-color: rgba(0,0,0,0.2)
+					position: relative
+					&:after
+						content: ''
+						position: absolute
+						top: 50%
+						right: -10px
+						+transform(translateY(-50%) rotate(45deg))
+						width: 15px
+						height: 15px
+						background-color: #fff
+
+.main-dashboard
+	width: 85%
+	float: right
+	z-index: 2
+	position: relative
+	padding: 0 4em
+	box-sizing: border-box
+	> header
+		padding: 5px 0
+		&:after
+			position: absolute
+			width: 100%
+			height: 1px
+			background-color: #ddd
+			content: ''
+			left: 0
+		h1
+			font-size: 18px
+			color: #666
+
+.stats
+	> header
+		padding-top: 1em
+
+		span
+			width: 33.3333%
+			float: left
+			text-transform: uppercase
+			font-size: 10px
+
+.stats-content
+	margin: 5px 0
+	_background-color: #ddd
+	position: relative
+	> div
+		width: 33.333%
+		float: left
+		span
+			padding: 10px 25px 10px 8px
+			float: left
+			color: #fff
+			&:first-child
+				margin-left: 0
+			h2, p
+				margin: 0
+
+.purple-1
+	background-color: #333366
+
+.purple-2
+	background-color: #1B1144
+
+.green-1
+	background-color: #5FB553
+
+.green-2
+	background-color: #178A39
+
+.green-3
+	background-color: #0C584A
+
+.main-table
+	margin-top: 4em
+	.dropdown
+		padding-left: 1em
+		.fa
+			padding-left: 2em
+	.search
+		span
+			font-size: 12px
+			font-weight: 600
+		.btn-search
+			width: 200px
+			text-align: left
+			.fa
+				padding-right: 10px
+	nav
+		.action
+			float: left
+		.search
+			float: right
+
+.the-table
+	table
+		margin-top: 10px
+		width: 100%
+		thead
+			background-color: rgb(39,33,86)
+			th
+				color: #fff
+				font-size: 12px
+				font-weight: 400
+				text-transform: uppercase
+				padding: 20px 0
+		tbody
+			tr 
+				td
+					padding: 10px 0
+					text-align: center
+					input[type="checkbox"]
+						margin: 0 5px
+					> span
+						font-size: 14px
+						font-weight: 500
+					&.about-cs
+						text-align: left
+				&:nth-child(2n+1)
+					background-color: #ddd
+					button
+						background-color: #eee !important
+				&:nth-child(2n+2)
+					background-color: #eee
+					button
+						background-color: #ddd !important
+				.about-cs
+					padding-left: 20px
+					.cs-dp
+						width: 30px
+						height: 30px
+						border-radius: 50%
+						background-color: #fff
+						display: inline-block
+						margin: 0 10px
+						text-align: center
+						font-size: 12px
+						font-weight: 400
+						line-height: 30px
+						vertical-align: text-bottom
+					.cs-address
+						display: inline-block
+						.cs-name
+							font-size: 14px
+							font-weight: 500
+							.fa
+								font-size: 10px
+								padding: 0 4px
+						font-size: 10px
+						font-weight: 300
+						span
+							display: block
+
+
